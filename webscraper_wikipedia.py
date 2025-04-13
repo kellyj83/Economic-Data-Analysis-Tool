@@ -8,7 +8,7 @@ headers = {
 }
 
 url = Request(
-    'https://www.tradecomplianceresourcehub.com/2025/04/11/trump-2-0-tariff-tracker/',
+    'https://en.wikipedia.org/wiki/Tariffs_in_the_second_Trump_administration#:~:text=From%20January%20to%20April%202025,level%20in%20over%20a%20century.&text=Trump%20escalated%20an%20ongoing%20trade,%25%20after%20April%209%2C%202025.',
     headers=headers
 )
 
@@ -21,7 +21,7 @@ soup = BeautifulSoup(html, "lxml")
 
 tables = soup.find_all("table")
 
-with pd.ExcelWriter("extracted_tables_reedsmith.xlsx", engine="openpyxl") as writer:
+with pd.ExcelWriter("extracted_tables_wikipedia.xlsx", engine="openpyxl") as writer:
     for idx, table in enumerate(tables):
         rows = table.find_all("tr")
         data = []
