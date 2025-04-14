@@ -34,3 +34,5 @@ with pd.ExcelWriter("extracted_tables_wikipedia.xlsx", engine="openpyxl") as wri
         df = pd.DataFrame(data)
         
         df.to_excel(writer, sheet_name = f"Table_{idx + 1}", index=False, header=False)
+
+        # test
